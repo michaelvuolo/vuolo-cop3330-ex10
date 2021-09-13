@@ -12,28 +12,30 @@ public class exercise {
         // create new scanner
         Scanner input = new Scanner(System.in);
 
-        // prompt for length
-        System.out.print("Enter length of room: ");
+        // record values
+        System.out.print("Enter the price of item 1: ");
+        double price1 = input.nextDouble();
+        System.out.print("Enter the quantity of item 1: ");
+        int quantity1 = input.nextInt();
 
-        // read length
-        double length = input.nextDouble();
+        System.out.print("Enter the price of item 2: ");
+        double price2 = input.nextDouble();
+        System.out.print("Enter the quantity of item 2: ");
+        int quantity2 = input.nextInt();
 
-        // prompt for width
-        System.out.print("Enter width of room: ");
+        System.out.print("Enter the price of item 3: ");
+        double price3 = input.nextDouble();
+        System.out.print("Enter the quantity of item 3: ");
+        int quantity3 = input.nextInt();
 
-        // read width
-        double width = input.nextDouble();
+        // calculate totals
+        double subtotal = (price1 * quantity1) + (price2 * quantity2) + (price3 * quantity3);
+        double tax = ((subtotal * 5.5) / 100);
+        double total = subtotal + tax;
 
-        // calculate area
-        double area = length * width;
-
-        // init constant
-        double gallonCovers = 350;
-
-        // calculate total number of gallons needed
-        int numGallons = (int)Math.ceil(area / gallonCovers);
-
-        // output results
-        System.out.print("You will need to purchase " + numGallons + " gallons of paint to cover " + (int)area +" square feet.");
+        // output
+        System.out.println("Subtotal: $" + String.format("%.2f", subtotal));
+        System.out.println("Tax: $" + tax);
+        System.out.println("Total: $" + total);
     }
 }
